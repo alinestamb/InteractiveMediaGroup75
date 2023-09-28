@@ -19,6 +19,7 @@ void setup() {
   table1 = new Table();
   table2 = new Table();
   cp5 = new ControlP5(this);
+// change data
   xy = loadTable("https://eif-research.feit.uts.edu.au/api/csv/?rFromDate=2023-03-01T21%3A17%3A57&rToDate=2023-08-23T21%3A16%3A59&rFamily=people_sh&rSensor=CB11.PC02.14.Broadway&rSubSensor=CB11.02.Broadway.East+In", "csv");
   r1 = cp5.addRadioButton("radioButton")
          .setPosition(100,180)
@@ -75,17 +76,10 @@ void controlEvent(ControlEvent theEvent) {
     for(int i=0;i<theEvent.getGroup().getArrayValue().length;i++) {
       print(int(theEvent.getGroup().getArrayValue()[i]));
     }
-    
-   // just need to be able to find any day and any time not hard-coded 
-   // characters to search for. 
-   // also need to get final data and use that instead, I'm using my animated
-   // wallpaper data right now.
+  
    
     println("\t "+theEvent.getValue());
-   // myColorBackground = color(int(theEvent.getGroup().getValue()*50),0,0);
-    // filter data
-   // int day = 23;
-    //for(int i=0;i<theEvent.getGroup().getArrayValue().length;i++) {
+
     if (theEvent.getGroup().getValue() == 1.0){
     print("filtering data for 1 week \n");
     for (int day = 16; day < 24; day++){
