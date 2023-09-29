@@ -2,15 +2,16 @@ import controlP5.*;
 
 ControlP5 cp5;
 
+CustomSlider slider1;
+CustomSlider slider2;
+CustomSlider slider3;
+
 TextDisplay myText;
 ImageLoad myImage;
 
 public boolean isPlaying = false;
-public int sliderTemp;
-public int sliderAirQuality;
-public int sliderPeopleCounter;
 
-color hover = color(0, 230, 150);
+
 
 void setup(){
   size(1000,750);
@@ -18,24 +19,39 @@ void setup(){
   myText = new TextDisplay();
   myImage = new ImageLoad();
   
+  //sliders:
+  cp5 = new ControlP5(this);
+  smooth(8);
+  int sliderx = (int)(0.02*width);
+  int slidery = (int)(0.18*height);
+  int slideroffset = 90;
+  println(sliderx);
+  
+  
+  slider1 = new CustomSlider(cp5, "Temp Slider", sliderx, slidery, 150, 30);
+  slider2 = new CustomSlider(cp5, "Air Quality Slider", sliderx, slidery+slideroffset, 150, 30);
+  slider3 = new CustomSlider(cp5, "People Counter", sliderx, slidery+(2*slideroffset), 150, 30);
+  
      
 }
 
 void draw(){
   
-  
+  fill(59,56,56);
   // text:
   //rect(0.01*width,0.02*height,0.22*width,0.15*height);
   //myText.textdisplay(0.01*width, 0.02*height);
   myText.textdisplay(width * 0.01, height * 0.9);
 
   
-  
+
   //3 sliders:
-  rect(0.01*width,0.18*height,0.22*width,0.32*height);
-  //MIGHT USE INTERFASCIA FOR THIS! CONTROLP5 IS HARD TO WORK WITH AESTHETICALLY!
-  
-  
+
+ 
+    slider1.display();
+    slider2.display();
+    slider3.display();
+      
   
   //black border:
   fill(0,0,0);
