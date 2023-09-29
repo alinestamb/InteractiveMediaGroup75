@@ -31,7 +31,6 @@ void setup(){
   slider1 = new CustomSlider(cp5, "Temp Slider", sliderx, slidery, 150, 30);
   slider2 = new CustomSlider(cp5, "Air Quality Slider", sliderx, slidery+slideroffset, 150, 30);
   slider3 = new CustomSlider(cp5, "People Counter", sliderx, slidery+(2*slideroffset), 150, 30);
-  
      
 }
 
@@ -43,21 +42,16 @@ void draw(){
   //myText.textdisplay(0.01*width, 0.02*height);
   myText.textdisplay(width * 0.01, height * 0.9);
 
-  
-
   //3 sliders:
-
- 
+   //STILL TO IMPLEMENT DISABLE/ENABLE FEATURE
     slider1.display();
     slider2.display();
     slider3.display();
-      
   
   //black border:
   fill(0,0,0);
   rect(0.25*width,0.02*height,0.72*width,0.6*height);
-  fill(255,255,255);
-  
+  fill(255,255,255);  
   
   //image:
   fill(62,75,107);
@@ -74,13 +68,11 @@ void draw(){
   //CHARLIZE AND CHRISTINES
   rect(0.28*width,0.54*height,0.66*width,0.06*height);
   
-  
   //variable states:
   //WILL USE INTERFASCIA FOR THIS:
   fill(112,173,71);
   rect(0.04*width,0.65*height,0.25*width,0.25*height);
-  fill(255,255,255);
-    
+  fill(255,255,255);    
   
   //TO DO:
   //pause/play:
@@ -88,7 +80,6 @@ void draw(){
   
   //volume:
   rect(0.32*width,0.9*height,0.26*width,0.06*height);
-  
   
   //timeframe: radiobuttons:
   //WILL USE INTERFASCIA:
