@@ -2,15 +2,18 @@ import controlP5.*;
 
 ControlP5 cp5;
 
-CustomSlider slider1;
-CustomSlider slider2;
-CustomSlider slider3;
+CreateSliders slider1;
+CreateSliders slider2;
+CreateSliders slider3;
+
+SliderTitles slider1Title;
+SliderTitles slider2Title;
+SliderTitles slider3Title;
 
 TextDisplay myText;
 ImageLoad myImage;
 
 public boolean isPlaying = false;
-
 
 
 void setup(){
@@ -27,49 +30,44 @@ void setup(){
   int slideroffset = 90;
   println(sliderx);
   
+  slider1 = new CreateSliders(cp5, "Temp Slider", sliderx, slidery, 150, 30);
+  slider2 = new CreateSliders(cp5, "Air Quality Slider", sliderx, slidery+slideroffset, 150, 30);
+  slider3 = new CreateSliders(cp5, "People Counter", sliderx, slidery+(2*slideroffset), 150, 30);
   
-  slider1 = new CustomSlider(cp5, "Temp Slider", sliderx, slidery, 150, 30);
-  slider2 = new CustomSlider(cp5, "Air Quality Slider", sliderx, slidery+slideroffset, 150, 30);
-  slider3 = new CustomSlider(cp5, "People Counter", sliderx, slidery+(2*slideroffset), 150, 30);
-     
+  slider1Title = new SliderTitles("Temp Slider", sliderx, slidery, 150, 30);
+  slider2Title = new SliderTitles("Air Quality Slider", sliderx, slidery+slideroffset, 150, 30);
+  slider3Title = new SliderTitles("People Counter", sliderx, slidery+(2*slideroffset), 150, 30);
 }
 
 void draw(){
   
-  fill(59,56,56);
   // text:
-  //rect(0.01*width,0.02*height,0.22*width,0.15*height);
-  //myText.textdisplay(0.01*width, 0.02*height);
-  myText.textdisplay(width * 0.01, height * 0.9);
-
-  //3 sliders:
-   //STILL TO IMPLEMENT DISABLE/ENABLE FEATURE
-    slider1.display();
-    slider2.display();
-    slider3.display();
+  myText.textdisplay(width * 0.01);
+    
+  //sliders:
+  slider1.display();
+  slider2.display();
+  slider3.display();
   
   //black border:
   fill(0,0,0);
   rect(0.25*width,0.02*height,0.72*width,0.6*height);
-  fill(255,255,255);  
   
   //image:
-  fill(62,75,107);
-   float imagex = 0.28*width;
-   float imagey = 0.04*height;
-   float imagew = 0.66*width;
-   float imageh = 0.49*height;
-  rect(0.28*width,0.04*height,0.66*width,0.49*height);
+  float imagex = 0.28*width;
+  float imagey = 0.04*height;
+  float imagew = 0.66*width;
+  float imageh = 0.49*height;
+  myImage.imageload(imagex,imagey, imagew, imageh);
+   
+  //placeholder rect's fill
   fill(255,255,255);
   
-   myImage.imageload(imagex,imagey, imagew, imageh);
-  
   //footsteps
-  //CHARLIZE AND CHRISTINES
   rect(0.28*width,0.54*height,0.66*width,0.06*height);
   
   //variable states:
-  //WILL USE INTERFASCIA FOR THIS:
+  //WILL USE INTERFASCIA FOR THIS, MOST LIKELY:
   fill(112,173,71);
   rect(0.04*width,0.65*height,0.25*width,0.25*height);
   fill(255,255,255);    
@@ -82,6 +80,6 @@ void draw(){
   rect(0.32*width,0.9*height,0.26*width,0.06*height);
   
   //timeframe: radiobuttons:
-  //WILL USE INTERFASCIA:
+  //WILL USE INTERFASCIA, MOST LIKELY:
   rect(0.6*width,0.9*height,0.36*width,0.06*height);
 }
