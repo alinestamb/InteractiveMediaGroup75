@@ -2,21 +2,22 @@ class TextDisplay {
   
   int loopcounter = 0; 
   float lineHeight = 25 ;
-  float marginLeft = width * 0.2;
-  
-  //NEED TO FIGURE OUT MARGINS AND IT SHOULD WORK.
+  float marginLeft;
+  String longText;
+ 
    
  void textdisplay(float marginLeft){
    
-   String longText;
-   
-   if(isPlaying ==true ){
-    longText = "See what changes! Pause to Enable."; //6
+   //GET THIS IF STATEMENT TO UPDATE IN FOUNDATION
+   println(isPlaying);
+      if(isPlaying ==false ){
+    longText = "See what changes! Pause VIDEO to Enable."; //6
    } else{
-     longText = "See what changes! Disabled when video starts playing."; //8
+     longText = "See what changes! Disabled when VIDEO starts playing."; //8
    }
    
    this.marginLeft = marginLeft;
+
        
     ////instruction text display
     fill(255);
@@ -49,4 +50,6 @@ class TextDisplay {
     }
   
   }
+  
+
 }
