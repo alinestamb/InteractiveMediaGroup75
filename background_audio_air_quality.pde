@@ -89,7 +89,7 @@ void setup() {
                   .setPosition(10, 100)
                   .setSize(200, 20)
                   .setRange(0.0, 1.0) // Set the volume range (0.0 to 1.0)
-                  .setValue(volumeValue); // Initialize volume
+                  .setValue(1); // Initialize volume
 }
 
 void draw() {
@@ -109,7 +109,7 @@ void setCombinedValue(float value) {
   combinedValue = value;
 
   // Separate the combined slider value into frequency and reverb wetness
-  float frequencyValue = map(value, 0.0, 2.0, 0.5, 2.0);
+  float frequencyValue = map(value, 0.0, 2.0, 1, 2.0;
   float reverbWetness = map(value, 0.0, 2.0, 0.0, 1.0);
 
   // Set the rate of the SamplePlayer using the calculated frequency
