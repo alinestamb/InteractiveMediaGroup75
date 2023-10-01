@@ -1,9 +1,5 @@
 import controlP5.*;
 import beads.*;
-import org.opencv.core.*;
-import org.opencv.highgui.HighGui;
-import org.opencv.imgcodecs.Imgcodecs;
-import org.opencv.imgproc.Imgproc;
 
 ControlP5 cp5;
 PImage img_foot;
