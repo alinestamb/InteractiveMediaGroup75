@@ -23,7 +23,7 @@ class Audio_Air_Volume {
     // Load your audio file
     Sample sample = null;
     try {
-      sample = new Sample("/Users/AlineStamboulian/Downloads/InteractiveMediaGroup75-audio-and-air-quality/background_audio_air_quality/soundtrack_2.wav");
+      sample = new Sample("/Users/AlineStamboulian/Downloads/soundtrack_2.wav");
     } catch (Exception e) {
       e.printStackTrace();
       exit();
